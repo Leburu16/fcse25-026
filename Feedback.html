@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>FEEDBACK</title>
+    <link rel="icon" type="image/x-icon" href="iconic.jpg">
+
+  </head>
+
+  <body style="background-image: url('delta lager.jpg'); background-size: cover; background-attachment: fixed; background-position: center; margin: 0; padding: 0;">
+    <div class="page-layout" style="background: transparent; box-shadow: none;">
+
+      <header style="background: transparent; padding-top: 40px;">
+        <a href="Feedback.html">
+          <img src="icon.jpg" alt="B&B Logo" width="150" style="border-radius: 50%; box-shadow: 0 8px 20px rgba(0,0,0,0.5);">
+        </a>
+        <h1 style="color: white; text-shadow: 2px 2px 8px rgba(0,0,0,0.8); margin-top: 20px;">Share Your Feedback</h1>
+      </header>
+
+      <nav style="background: transparent;">
+        <button class="nav-toggle" aria-label="Toggle navigation" onclick="this.parentElement.querySelector('.nav-links').classList.toggle('open')" style="text-shadow: 2px 2px 5px rgba(0,0,0,0.8);">&#9776;</button>
+        <div class="nav-links" style="background: rgba(0,0,0,0.6); border-radius: 30px; margin: 0 auto; max-width: fit-content; padding: 5px 20px; -webkit-backdrop-filter: blur(5px); backdrop-filter: blur(5px); box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
+           <a href="home.html" style="text-shadow: 1px 1px 3px rgba(0,0,0,0.8);">Home</a>
+           <a href="About Us.html" style="text-shadow: 1px 1px 3px rgba(0,0,0,0.8);">About Us</a>
+          <a href="Menu.html" style="text-shadow: 1px 1px 3px rgba(0,0,0,0.8);">Menu</a>
+           <a href="Feedback.html" style="text-shadow: 1px 1px 3px rgba(0,0,0,0.8);">Feedback</a>
+        </div>
+      </nav>
+
+      <main style="background: transparent; box-shadow: none; margin: 30px auto; max-width: 1200px; padding: 0 20px;">
+        <section style="padding: 40px; background: rgba(255, 255, 255, 0.25); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.5);">
+          <h2 style="font-size: 2.5rem; color: #fff; text-shadow: 2px 2px 5px rgba(0,0,0,0.8); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px; border-bottom: none; text-align: center;">Enquire with us</h2>
+          <p style="text-align: center; font-size: 1.2rem; color: #fff; text-shadow: 1px 1px 3px rgba(0,0,0,0.8); margin-bottom: 30px; font-weight: bold;">We love hearing from our guests. Thank you for taking the time to reach out — your opinion truly matters to us.</p>
+          
+          <form id="feedbackForm" style="display: flex; flex-direction: column; gap: 15px; max-width: 600px; margin: 0 auto;">
+            <div>
+              <label for="name" style="display: block; font-weight: bold; margin-bottom: 5px; color: #fff; text-shadow: 1px 1px 3px rgba(0,0,0,0.8);">Name</label>
+              <input type="text" id="name" name="name" style="width: 100%; padding: 12px; border: 1px solid rgba(255,255,255,0.6); border-radius: 6px; background: rgba(255,255,255,0.4); color: #222; font-weight: bold; box-shadow: 0 4px 15px rgba(0,0,0,0.1);" required>
+            </div>
+            <div>
+              <label for="email" style="display: block; font-weight: bold; margin-bottom: 5px; color: #fff; text-shadow: 1px 1px 3px rgba(0,0,0,0.8);">Email</label>
+              <input type="email" id="email" name="email" style="width: 100%; padding: 12px; border: 1px solid rgba(255,255,255,0.6); border-radius: 6px; background: rgba(255,255,255,0.4); color: #222; font-weight: bold; box-shadow: 0 4px 15px rgba(0,0,0,0.1);" required>
+            </div>
+            <div>
+              <label for="message" style="display: block; font-weight: bold; margin-bottom: 5px; color: #fff; text-shadow: 1px 1px 3px rgba(0,0,0,0.8);">Message</label>
+              <textarea id="message" name="message" rows="5" style="width: 100%; padding: 12px; border: 1px solid rgba(255,255,255,0.6); border-radius: 6px; background: rgba(255,255,255,0.4); color: #222; font-weight: bold; box-shadow: 0 4px 15px rgba(0,0,0,0.1);" required></textarea>
+            </div>
+            <button type="submit" style="background-color: #ff4500; color: white; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; border: none; padding: 15px 30px; border-radius: 6px; cursor: pointer; font-size: 1.1rem; align-self: center; margin-top: 10px; box-shadow: 0 4px 10px rgba(255,69,0,0.3); transition: transform 0.2s, box-shadow 0.2s;">Send Feedback</button>
+          </form>
+        </section>
+
+        <!-- Modal Overlay -->
+        <div id="feedbackModal" class="modal-overlay">
+          <div class="modal-content" style="background: rgba(255,255,255,0.95); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);">
+            <h3 style="color: #ff4500;">Thank You!</h3>
+            <p>Your feedback has been successfully submitted. We appreciate your input.</p>
+            <button id="closeModal" style="background-color: #ff4500; font-weight: bold; border-radius: 6px; color: white; border: none; padding: 10px 20px; cursor: pointer;">Close</button>
+          </div>
+        </div>
+      </main>
+
+      <footer style="background: transparent; color: white; text-shadow: 1px 1px 3px rgba(0,0,0,0.8); margin-top: 50px;">
+        <p>CopyRight © 2016 Bull and Bush | All Rights Reserved.</p>
+      </footer>
+    </div>
+
+    <script>
+      // Add hover effect to submit button dynamically to keep it external css style simple
+      const btn = document.querySelector('button[type="submit"]');
+      btn.addEventListener('mouseenter', () => { btn.style.transform = 'translateY(-2px)'; btn.style.boxShadow = '0 6px 15px rgba(255,69,0,0.4)'; });
+      btn.addEventListener('mouseleave', () => { btn.style.transform = 'none'; btn.style.boxShadow = '0 4px 10px rgba(255,69,0,0.3)'; });
+
+      document.getElementById('feedbackForm').addEventListener('submit', function(e) {
+        e.preventDefault(); // Prevent form submission and page reload
+        document.getElementById('feedbackModal').classList.add('active');
+        this.reset(); // Clear the form fields
+      });
+      
+      document.getElementById('closeModal').addEventListener('click', function() {
+        document.getElementById('feedbackModal').classList.remove('active');
+      });
+    </script>
+  </body>
+</html>
